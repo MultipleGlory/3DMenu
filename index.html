@@ -1,0 +1,82 @@
+﻿<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>三维菜单测试</title>
+
+		<meta name="viewport" content="width=800, user-scalable=no">
+
+		<link href="css/googleapis.css" rel='stylesheet' type='text/css'>
+
+		<link rel="stylesheet" href="css/demo.css">
+	</head>
+
+	<body>
+
+		<div class="meny">
+			<h2>让我们开始吧</h2>
+			<ul>
+				<li><a href="index2.html">江山雪</a></li>
+				<li><a href="index3.html">文字重组</a></li>
+				<li><a href="starrySky.html">全屏星空</a></li>
+				<li><a href="../periodicTableOfElements/index.html">元素周期表</a></li>
+				<li><a href="../cube/index.html">三阶魔方</a></li>
+				<li><a href="#">7</a></li>
+				<li><a href="#">8</a></li>
+				<li><a href="#">9</a></li>
+				<li><a href=index.html>返回</a></li>
+			</ul>
+		</div>
+
+		<div class="meny-arrow"></div>
+
+		<div class="contents">
+			<article>
+				<h1>Daniel</h1>
+				<p>
+					HTML假想世界
+				</p>
+				<p>
+					移动鼠标到左侧
+                </p>
+                <p>
+                    另外，已针对触控设备进行优化
+                </p>
+                <p>
+                    请向右轻扫
+				</p>
+				<p>
+					The name, <em>Daniel</em>, in China.
+				</p>
+				<small>
+					联系我 <a href="http://yundaniel.site/wordpress">@Daniel</a> / <a href="#">http://www</a>
+				</small>
+			</article>
+		</div>
+
+		<script src="js/meny.min.js"></script>
+		<script>
+			var meny = Meny.create({
+				menuElement: document.querySelector( '.meny' ),
+				contentsElement: document.querySelector( '.contents' ),
+				position: Meny.getQuery().p || 'left',
+				height: 200,
+				width: 260,
+				threshold: 40,
+				mouse: true,
+				touch: true
+			});
+			if( Meny.getQuery().u && Meny.getQuery().u.match( /^http/gi ) ) {
+				var contents = document.querySelector( '.contents' );
+				contents.style.padding = '0px';
+				contents.innerHTML = '<div class="cover"></div><iframe src="'+ Meny.getQuery().u +'" style="width: 100%; height: 100%; border: 0; position: absolute;"></iframe>';
+			}
+		</script>
+
+		<script type="text/javascript" src="js/widgets.js"></script>
+
+
+	</body>
+</html>
